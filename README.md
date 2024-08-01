@@ -16,6 +16,6 @@ Open the ChuaRamos_mp2.asm in rars and build and run the program. The program wi
 pokemon that won the battle based on its type.
 
 ## Members
-Chua, Matthew Adrian Uy__
+Chua, Matthew Adrian Uy <br />
 Ramos, Ashley Kylle
 
