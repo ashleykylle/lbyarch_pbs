@@ -1,8 +1,8 @@
 .include "macro.asm"
 
 .data
-filename1:   .asciz "D:\\Schoolshit\\LBYARCH\\MP2 Github\\pokemon_type1.bin"       # File name of the input file
-filename2:   .asciz "D:\\Schoolshit\\LBYARCH\\MP2 Github\\pokemon_type2.bin"       # File name of the input file
+filename1:   .asciz "pokemon_type1.bin"       # File name of the input file
+filename2:   .asciz "pokemon_type2.bin"       # File name of the input file
 type1: .space 4096 #this buffer holds the type1 in the file
 type2: .space 4096 #this buffer holds the type2 in the file
 pokemon1: .float 0.0 #this holds the strength value of pokemon1
