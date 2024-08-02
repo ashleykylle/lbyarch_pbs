@@ -9,6 +9,14 @@ pokemon1: .float 0.0 #this holds the strength value of pokemon1
 pokemon2: .float 0.0 #this holds the strength value of pokemon2
 temppokemon1: .float 0.0 #this holds the temp strength value of pokemon1
 temppokemon2: .float 0.0 #this holds the temp strength value of pokemon2
+msg0: .asciz "pokemon_type1.bin file status: "
+msg1: .asciz "pokemon_type2.bin file status: "
+msg2: .asciz "Pokemon1 type 1 and 2: "
+msg3: .asciz "Pokemon2 type 1 and 2: "
+msg4: .asciz " "
+msg5: .asciz "Winner: "
+msg6: .asciz "Pokemon1: "
+msg7: .asciz "Pokemon2: "
 
 #600 max index
 # 0 is starting pokemon
@@ -44,9 +52,12 @@ li a7, 63
 ecall
 mv s3, a0                 #store the bytes read to S3
 
+PRINT_STRING(msg0)
 PRINT_DEC(s0)
 NEWLINE
+PRINT_STRING(msg1)
 PRINT_DEC(s2)
+NEWLINE
 NEWLINE
 
 ####################################################################################################
@@ -109,12 +120,15 @@ BATTLE(f3, s6, s10)
 
 # This prints the type1 and 2 of pokemon1 and type1 and 2 of pokemon2 respectively 
 NEWLINE
+PRINT_STRING(msg2)
 PRINT_FLOAT(f0)
-NEWLINE
+PRINT_STRING(msg4)
 PRINT_FLOAT(f2)
+
 NEWLINE
+PRINT_STRING(msg3)
 PRINT_FLOAT(f1)
-NEWLINE
+PRINT_STRING(msg4)
 PRINT_FLOAT(f3)
 
 COMPUTE(f0, f2)
@@ -123,8 +137,10 @@ COMPUTE(f1, f3)
 #this prints the average values of pokemon1 and pokemon2 respectively
 NEWLINE
 NEWLINE
+PRINT_STRING(msg6)
 PRINT_FLOAT(f0)
 NEWLINE
+PRINT_STRING(msg7)
 PRINT_FLOAT(f1)
 
 NEWLINE
@@ -139,14 +155,17 @@ j pokemon1win
 #prints the result
 draw:
 	li t0, -1
+	PRINT_STRING(msg5)
 	PRINT_DEC(t0)
 	j end
 	
 pokemon1win:
+	PRINT_STRING(msg5)
 	PRINT_DEC(x3)
 	j end
 	
 pokemon2win:
+	PRINT_STRING(msg5)
 	PRINT_DEC(x4)
 	j end
 	

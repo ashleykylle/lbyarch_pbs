@@ -17,27 +17,9 @@ invalid: .float -1.0
 	ecall
 	.end_macro
 	
-.macro PRINT_CHAR(%x)
-	mv a0, %x
-	li a7, 11
-	ecall
-	.end_macro
-	
 .macro PRINT_STRING(%s)
 	la a0, %s
 	li a7, 4
-	ecall
-	.end_macro
-
-.macro PRINT_HEX(%x)
-	mv a0, %x
-	li a7, 34
-	ecall
-	.end_macro
-	
-.macro PRINT_BIN(%x)
-	mv a0, %x
-	li a7, 35
 	ecall
 	.end_macro
 	
@@ -47,23 +29,10 @@ invalid: .float -1.0
 	ecall
 	.end_macro
 	
-.macro GET_STRING(%x, %y)
-	la a0, %x
-	li a1, %y
-	li a7, 8
-	ecall
-	.end_macro
-	
 .macro GET_DEC(%x)
 	li a7, 5
 	ecall
 	mv %x, a0
-	.end_macro
-	
-.macro GET_FLOAT(%x)
-	li a7, 6
-	ecall
-	fmv.s %x, fa0
 	.end_macro
 	
 .macro GET_HALF(%x)
