@@ -522,8 +522,3 @@ invalid: .float -1.0
 	end:
 	
 	.end_macro
-		
-	
-	
-		
-	
